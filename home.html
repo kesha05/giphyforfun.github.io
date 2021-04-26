@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - SGP G-22  Giff API</title>
+  
+  
+  
+  
+<style>
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font-family: "Raleway", sans-serif;
+}
+
+.header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.header > div {
+  border: 10px solid #aaa;
+}
+
+.header > div input {
+  padding: 10px;
+  width: 400px;
+  border: none;
+  outline: none;
+}
+
+.header > div button {
+  height: 100%;
+  border-radius: 0px;
+  border: none;
+  outine: none;
+  padding: 0px 10px;
+  background: #00acee;
+  color: #f5f5f5;
+  font-weight: 600;
+}
+
+.result {
+  padding: 20px;
+}
+
+.result .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.result .list .item {
+  margin: 10px;
+  height: 210px;
+  border: 5px solid #aaa;
+}
+
+.result .list .item img {
+  width: 100%;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.loading .loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-top: 5px solid #111;
+  transform: rotate(0deg);
+  animation: loading 500ms ease-in-out infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*========Dank Loader==========*/
+main {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.dank-ass-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dank-ass-loader .row {
+  display: flex;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 0 -6px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 21.6px solid #fd7000;
+  animation: blink 1s infinite;
+  filter: drop-shadow(0 0 18px #fd7000);
+}
+.arrow.down {
+  transform: rotate(180deg);
+}
+.arrow.outer-1 {
+  animation-delay: -0.0555555556s;
+}
+.arrow.outer-2 {
+  animation-delay: -0.1111111111s;
+}
+.arrow.outer-3 {
+  animation-delay: -0.1666666667s;
+}
+.arrow.outer-4 {
+  animation-delay: -0.2222222222s;
+}
+.arrow.outer-5 {
+  animation-delay: -0.2777777778s;
+}
+.arrow.outer-6 {
+  animation-delay: -0.3333333333s;
+}
+.arrow.outer-7 {
+  animation-delay: -0.3888888889s;
+}
+.arrow.outer-8 {
+  animation-delay: -0.4444444444s;
+}
+.arrow.outer-9 {
+  animation-delay: -0.5s;
+}
+.arrow.outer-10 {
+  animation-delay: -0.5555555556s;
+}
+.arrow.outer-11 {
+  animation-delay: -0.6111111111s;
+}
+.arrow.outer-12 {
+  animation-delay: -0.6666666667s;
+}
+.arrow.outer-13 {
+  animation-delay: -0.7222222222s;
+}
+.arrow.outer-14 {
+  animation-delay: -0.7777777778s;
+}
+.arrow.outer-15 {
+  animation-delay: -0.8333333333s;
+}
+.arrow.outer-16 {
+  animation-delay: -0.8888888889s;
+}
+.arrow.outer-17 {
+  animation-delay: -0.9444444444s;
+}
+.arrow.outer-18 {
+  animation-delay: -1s;
+}
+.arrow.inner-1 {
+  animation-delay: -0.1666666667s;
+}
+.arrow.inner-2 {
+  animation-delay: -0.3333333333s;
+}
+.arrow.inner-3 {
+  animation-delay: -0.5s;
+}
+.arrow.inner-4 {
+  animation-delay: -0.6666666667s;
+}
+.arrow.inner-5 {
+  animation-delay: -0.8333333333s;
+}
+.arrow.inner-6 {
+  animation-delay: -1s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div id="root"></div>
+<html>
+  <head>
+    <h1 style="color:white;">SGP Group 22</h1>
+    <style>
+    h1 {text-align: center;}
+    </style>
+  </head>
+<main>
+   <div class="dank-ass-loader">
+      <div class="row">
+         <div class="arrow up outer outer-18"></div>
+         <div class="arrow down outer outer-17"></div>
+         <div class="arrow up outer outer-16"></div>
+         <div class="arrow down outer outer-15"></div>
+         <div class="arrow up outer outer-14"></div>
+      </div>
+      <div class="row">
+         <div class="arrow up outer outer-1"></div>
+         <div class="arrow down outer outer-2"></div>
+         <div class="arrow up inner inner-6"></div>
+         <div class="arrow down inner inner-5"></div>
+         <div class="arrow up inner inner-4"></div>
+         <div class="arrow down outer outer-13"></div>
+         <div class="arrow up outer outer-12"></div>
+      </div>
+      <div class="row">
+         <div class="arrow down outer outer-3"></div>
+         <div class="arrow up outer outer-4"></div>
+         <div class="arrow down inner inner-1"></div>
+         <div class="arrow up inner inner-2"></div>
+         <div class="arrow down inner inner-3"></div>
+         <div class="arrow up outer outer-11"></div>
+         <div class="arrow down outer outer-10"></div>
+      </div>
+      <div class="row">
+         <div class="arrow down outer outer-5"></div>
+         <div class="arrow up outer outer-6"></div>
+         <div class="arrow down outer outer-7"></div>
+         <div class="arrow up outer outer-8"></div>
+         <div class="arrow down outer outer-9"></div>
+      </div>
+   </div>
+</main>
+</html>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js'></script>
+      <script id="rendered-js" >
+const GIPHY_API = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=20&offset=0&q=";
+let GIFSearch = () => {
+  let [search, setSearch] = React.useState("");
+  let [gifs, setGifs] = React.useState([]);
+  let [loadingState, setLoadingState] = React.useState(false);
+
+  let searchGif = () => {
+    if (search.length > 0) {
+      setLoadingState(true);
+      fetch(GIPHY_API + search).
+      then(res => {
+        setLoadingState(false);
+        return res.json();
+      }).
+      then(result => {
+        console.log(result);
+        setGifs(result.data.map(gif => {
+          return gif.images.fixed_height.url;
+        }));
+      }).
+      catch(() => {
+        alert("Something went wrong");
+        setLoadingState(false);
+      });
+    }
+  };
+  return /*#__PURE__*/(
+    React.createElement("div", null, /*#__PURE__*/
+    React.createElement("div", { className: "header" }, /*#__PURE__*/
+    React.createElement("div", null, /*#__PURE__*/
+    React.createElement("input", {
+      type: "text",
+      placeholder: "Search GIF",
+      value: search,
+      onChange: e => setSearch(e.target.value) }), /*#__PURE__*/
+
+    React.createElement("button", { onClick: searchGif }, "Search"))), /*#__PURE__*/
+
+
+
+
+    React.createElement("div", { className: "result" },
+
+    loadingState ? /*#__PURE__*/
+    React.createElement("div", { className: "loading" }, /*#__PURE__*/
+    React.createElement("div", { className: "loader" })) : /*#__PURE__*/
+
+
+
+    React.createElement("div", { className: "list" },
+
+    gifs.map(gif => {
+      return /*#__PURE__*/(
+        React.createElement("div", { className: "item" }, /*#__PURE__*/
+        React.createElement("img", { src: gif })));
+
+
+    })))));
+
+
+
+
+
+
+
+};
+
+ReactDOM.render( /*#__PURE__*/React.createElement(GIFSearch, null), document.querySelector("#root"));
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
